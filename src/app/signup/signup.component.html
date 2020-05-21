@@ -1,0 +1,524 @@
+<app-header [Heading]="'Login'" [routerLink]="'login'"> </app-header>
+
+<section class="bg-home">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- <div class="col-lg-7 col-md-5">
+                        <div class="mr-lg-6">
+                            <img src="https://easyshipping.info/assets/theme_deprixa/images/user/signup.png"
+                                class="img-fluid" alt="">
+                        </div>
+                    </div> -->
+
+                    <div class="col-lg-12 col-md-7 mt-4 mt-sm-5 pt-2 pt-sm-3">
+                        <div class="login_page bg-white shadow rounded p-4">
+                            <div class="text-center">
+                                <h4 class="mb-4">Register now!</h4>
+                                <p>Let's set up your account in just a couple of steps.</p>
+                            </div>
+
+                            <form class="login-form" id="msform" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <ul class="progress-indicator">
+                                            <li class="completed" *ngFor="let tab of studentRegTab"
+                                                [ngClass]="{'active': tab.isActive}">
+                                                <span class="bubble"></span>
+                                                {{tab.title}} <br>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="field-set">
+                                    <fieldset id="profile" [ngClass]="{'active' : studentRegTab[0].isActive }">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Company Name <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control"
+                                                        formControlName="company_name" placeholder="Company Name"
+                                                        name="fname">
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Company Owner <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Company Owner" formControlName="company_owner" name="lname">
+                                                </div>
+                                            </div> -->
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Person Of Contact <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Person Of Contact" formControlName="company_owner"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Company Address:
+                                                        <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Company Address" formControlName="company_address"
+                                                        name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Phone Number 1:
+                                                        <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Phone Number 1" formControlName="company_phone"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>CNIC Number:
+                                                        <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control " formControlName="cnic_no"
+                                                        placeholder="CNIC Number" name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Phone Number 2: </label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Phone Number 2" name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>NTN Number:</label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="ntn_number" placeholder="NTN Number"
+                                                        name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>STRN Number:</label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="strn_number" placeholder="STRN Number"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>URL:
+                                                        <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="comapny_url" placeholder="URL" name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>City: <span class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select City" formControlName="company_city"
+                                                        [items]="city" class="" bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Nature Of Account: <span class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select Nature Of Account"
+                                                        formControlName="nature_of_account" [items]="natureOfAcc"
+                                                        class="" bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Product Type: <span class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select Product Type"
+                                                        formControlName="products_type" [items]="producType" class=""
+                                                        bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Expected Average Shipments: <span
+                                                            class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="number" class=" form-control "
+                                                        placeholder="Expected Average Shipments"
+                                                        formControlName="expected_shipments" name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Expected Average Shipment Duration: <span
+                                                            class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select Duration"
+                                                        formControlName="average_shipment_duration" [items]="duration"
+                                                        class="" bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Reference: <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <ng-select placeholder="Select Reference"
+                                                        formControlName="reference_name" [items]="reference" class=""
+                                                        bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Sale Person: <span class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select Sale Person"
+                                                        formControlName="sale_person" [items]="salePerson" class=""
+                                                        bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+
+                                    <fieldset id="shipping" [ngClass]="{'active' : studentRegTab[1].isActive }">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Pickup Address<span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Pickup Address" formControlName="pickup_address"
+                                                        name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Phone Number <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="contact_person_phone"
+                                                        placeholder="Phone Number" name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Person of Contact<span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Person of Contact"
+                                                        formControlName="contact_person_name" name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Email Address<span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="comapny_email_address"
+                                                        placeholder="Email Address" name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Product Type: <span class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select Product Type"
+                                                        formControlName="products_type" [items]="producType" class=""
+                                                        bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Shipper City: <span class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select Pickup City"
+                                                        formControlName="shipper_city" [items]="city" class=""
+                                                        bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- <div class="col-lg-3 mb-0">
+                                            <button class="btn btn-primary rounded w-100">Add Pickup Location</button>
+                                            <input name="doLogin" type="hidden" value="1">
+                                        </div> -->
+                                    </fieldset>
+
+                                    <fieldset id="bank" [ngClass]="{'active' : studentRegTab[2].isActive }">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Bank Name: <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control " formControlName="bank_name"
+                                                        placeholder="Bank Name" name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Account Title: <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="account_title" placeholder="Account Title"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Branch Name: <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="branch_name" placeholder="Branch Name"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>IBAN Number: <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="(e.g: PK37MEZN0001220100004069)"
+                                                        formControlName="IBAN_number" name="fname">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Account Number: <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        placeholder="Account Number" formControlName="account_number"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Bank City: <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <ng-select placeholder="Select Bank City"
+                                                        formControlName="bank_city" [items]="city" class=""
+                                                        bindLabel="value" bindValue="value">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <!-- <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Cycle of Payment: <span class="text-danger">*</span></label>
+                                                    <ng-select placeholder="Select Cycle of Payment" [items]="" class=""
+                                                        bindLabel="" bindValue="">
+                                                    </ng-select>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+
+                                    </fieldset>
+
+                                    <fieldset id="billing" [ngClass]="{'active' : studentRegTab[3].isActive }">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Billing Person Name <span
+                                                            class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="billing_person_name"
+                                                        placeholder="Billing Person Name" name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Billing Person Phone <span
+                                                            class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="billing_person_phone"
+                                                        placeholder="Billing Person Phone" name="lname">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Billing Person Email <span
+                                                            class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="billing_person_email"
+                                                        placeholder="abc@example.com" name="fname">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Billing Address <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control "
+                                                        formControlName="billing_address" placeholder="Billing Address"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="mt-3">Pdf of filled and signed document:
+                                                </label>
+                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="upload-btn-wrapper mb-1">
+                                                    <button class="btn">Upload a file</button>
+                                                    <input type="file" name="myfile" />
+                                                  </div>
+                                            </div>
+                                        </div>
+                                               
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label  class="mt-3">Pdf of signed Acknowledgement form:
+                                                </label >
+                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="upload-btn-wrapper mb-1">
+                                                    <button class="btn">Upload a file</button>
+                                                    <input type="file" name="myfile" />
+                                                  </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label  class="mt-3">Picture of CNIC (Front):
+                                                </label>
+                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="upload-btn-wrapper mb-1">
+                                                    <button class="btn">Upload a file</button>
+                                                    <input type="file" name="myfile" />
+                                                  </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label  class="mt-3">Picture of CNIC (Back):
+                                                </label>
+                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="upload-btn-wrapper mb-1">
+                                                    <button class="btn">Upload a file</button>
+                                                    <input type="file" name="myfile" />
+                                                  </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label  class="mt-3">Picture of Blank cheque:
+                                                </label>
+                                              
+                                            </div>
+                                            <div class="row">
+                                                <div class="upload-btn-wrapper">
+                                                    <button class="btn">Upload a file</button>
+                                                    <input type="file" name="myfile" />
+                                                  </div>
+                                            </div>
+                                        </div> -->
+                                    </fieldset>
+                                    <fieldset id="login" [ngClass]="{'active' : studentRegTab[4].isActive }">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Username <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="text" class="form-control " formControlName="username"
+                                                        placeholder="abc@example.com" name="fname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group position-relative">
+                                                    <label>Enter Password <span class="text-danger">*</span></label>
+                                                    <i class="mdi mdi-account ml-3 icons"></i>
+                                                    <input type="password" class="form-control "
+                                                        formControlName="password" placeholder="Minimum 6 Characters"
+                                                        name="lname">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <button type="button" class="previous action-button"
+                                    (click)="changeTab('previous')">{{actionButtons.previous}}</button>
+                                <button type="button" *ngIf="actionButtons.next === 'Next'" class="next action-button"
+                                    (click)="changeTab('next')">{{actionButtons.next}}</button>
+
+                                <button type="submit" *ngIf="actionButtons.next === 'Submit'"
+                                    class="next action-button">{{actionButtons.next}}</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
+            </div>
+            <!--end container-->
+        </div>
+    </div>
+</section>
