@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientService {
+export class ManagerService {
 
   constructor(private http: HttpClient) { }
 
-  storeClient(data: any) {
-    return this.http.post(environment.endPoint + 'Client/', data);
+  getDashboardDetail() {
+    return this.http.get(environment.endPoint + 'dashboard/');
   }
 
   updateClient(data: any ,id: any) {
@@ -28,6 +28,10 @@ export class ClientService {
   
   viewClient(id :any ): Observable<any> {
     return this.http.get<any>(environment.endPoint + 'Client/' + id);
+  }
+
+  getpendingSeller() {
+    return this.http.get<any>(environment.endPoint + 'getpendingseller/');
   }
   
 }

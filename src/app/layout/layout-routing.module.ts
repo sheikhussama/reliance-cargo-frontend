@@ -7,16 +7,12 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+            { path: '', redirectTo: 'manager', pathMatch: 'prefix' },
             {
-                path: 'dashboard',
+                path: 'manager',
                 loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule)
             },
-            { path: 'grid', loadChildren: () => import('./grid/grid.module').then((m) => m.GridModule) },
-            {
-                path: 'blank-page',
-                loadChildren: () => import('./blank-page/blank-page.module').then((m) => m.BlankPageModule)
-            }
+            { path: 'seller', loadChildren: () => import('./grid/grid.module').then((m) => m.GridModule) },
         ]
     }
 ];

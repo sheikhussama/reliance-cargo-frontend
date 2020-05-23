@@ -1,0 +1,18 @@
+.container-fluid {
+    padding: 20px;
+    min-height: calc(100vh - 180px);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    box-shadow: #0000001a -20px 20px 28px -22px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 20px;
+}

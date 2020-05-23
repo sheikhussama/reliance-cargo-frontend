@@ -18,12 +18,10 @@ export class AuthService {
     return this.http.post(environment.endPoint + 'sellersignup/', data);
   }
 
-
   getUserType() {
     return this.http.get(environment.endPoint + 'getusertype/');
   }
-
-
+  
   isLoggedIn() {
     return this.cookie.check('accessToken');
   }

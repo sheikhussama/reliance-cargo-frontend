@@ -45,3 +45,38 @@ $topnav-background-color: #222;
         }
     }
 }
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 64px;
+    width: 236px;
+}
+
+.top-navbar{
+    min-height: 64px;
+    padding: 0;
+    // width: 250px;
+}
+
+.navbar-expand-lg .navbar-toggler-lg {
+    display: block;
+}
+
+.navbar-toggler-lg {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.collapsed {
+    width: 60px;
+
+    span {
+        display: none;
+    }
+}

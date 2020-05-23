@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         const loginFormData = this.loginForm.value;
         this.authService.login(loginFormData).subscribe((response: any) => {
-            this.router.navigate(['/dashboard']);
             this.toast.pop('success', 'Success!', 'Login SuccessFully.');
             if (response && response.token) {
                 this.cookie.set('accessToken', response.token);
@@ -54,7 +53,15 @@ export class LoginComponent implements OnInit {
 
     getUserType() {
         this.authService.getUserType().subscribe((response: any) => {
-            console.log(response);
+            if(response.role === 'M') {
+                this.router.navigate(['/manager']);
+            }
+            if (response.role === 'E'){
+                this.router.navigate(['/employee']);
+            }
+            if (response.role === 'S'){
+                this.router.navigate(['/employee']);
+            }
         });
     }
 

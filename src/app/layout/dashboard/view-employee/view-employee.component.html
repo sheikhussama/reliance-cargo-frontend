@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="card">
+        <table class="table table-hover shopping-cart-wrap">
+            <thead class="text-muted">
+                <tr>
+                    <th scope="col" class="text-dark">Employee Name</th>
+                    <th scope="col" class="text-dark">Employee City</th>
+                    <th scope="col" class="text-dark">Employee Address</th>
+                    <th scope="col" class="text-dark">Employee Phone#</th>
+                    <th scope="col" class="text-dark">Employee Email</th>
+                    <th scope="col" class="text-dark">Action</th>
+
+                </tr>
+            </thead>
+            <tbody *ngFor="let data of getEmployee">
+                <tr>
+                    <td>
+                        <figure class="media">
+                            {{data.employee_name}}
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="media">
+                            {{data.employee_city}}
+
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="media">
+                            {{data.employee_address}}
+
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="media">
+                            {{data.employee_phone}}
+
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="media">
+                            {{data.employee_email}}
+
+                        </figure>
+                    </td>
+                    <td class="text-right">
+                        <!-- <button title="" href="" class="btn btn-outline-success" data-toggle="tooltip"
+                            data-original-title="Save to Wishlist"> <i class="fa fa-pencil"
+                                aria-hidden="true" (click)="updatePurchase(data)"></i></button> -->
+                        <button href="" class="btn btn-outline-danger" (click)="deleteEmployee(data)"> <i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> <!-- card.// -->
+
+
+</div>
