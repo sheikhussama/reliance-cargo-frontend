@@ -5,6 +5,7 @@ import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.co
 import { CreateEmployeeComponent } from './create-employee/create-employee.component';
 import { StatusSellerComponent } from './status-seller/status-seller.component';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { TrackingInfoComponent } from './tracking-info/tracking-info.component';
 
 const routes: Routes = [
     {
@@ -13,6 +14,7 @@ const routes: Routes = [
             { path: 'createmployee', component: CreateEmployeeComponent },
             { path: 'sellerstatus', component: StatusSellerComponent },
             { path: 'viewEmployee', component: ViewEmployeeComponent },
+            { path: 'track-Order', component: TrackingInfoComponent },
 
         ]
     }

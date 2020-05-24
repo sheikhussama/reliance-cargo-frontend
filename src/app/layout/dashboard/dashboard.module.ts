@@ -8,9 +8,18 @@ import { CreateEmployeeComponent } from './create-employee/create-employee.compo
 import { SharedModule } from '../../shared/shared.module';
 import { StatusSellerComponent } from './status-seller/status-seller.component';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { TrackingInfoComponent } from './tracking-info/tracking-info.component';
 
 @NgModule({
     imports: [CommonModule, SharedModule, DashboardRoutingModule],
-    declarations: [DashboardComponent, SidebarComponent,DashboardDetailComponent, CreateEmployeeComponent, StatusSellerComponent, ViewEmployeeComponent]
+    declarations: 
+    [
+     DashboardComponent, 
+     SidebarComponent,
+     DashboardDetailComponent,
+     CreateEmployeeComponent, 
+     StatusSellerComponent,
+     ViewEmployeeComponent, 
+     TrackingInfoComponent]
 })
 export class DashboardModule {}

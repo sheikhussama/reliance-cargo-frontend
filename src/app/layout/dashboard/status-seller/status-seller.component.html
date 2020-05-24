@@ -1,33 +1,111 @@
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <!-- Column -->
-        <div class="col-lg-8 col-xlg-12 col-md-12">
-            <div class="card">
-                <!-- Tabs -->
-                <form class="form-horizontal form-material" id="admin_form"
-                   >
-                    <section>
-                        <header>Seller Status</header>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Select Status</label>
-                                    <ng-select placeholder="Select Status"[items]=""
-                                        class="" bindLabel="" bindValue="">
-                                    </ng-select>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button class="btn btn-outline-primary btn-confirmation" name="dosubmit" type="submit">Send Status<span><i class="icon-ok"></i></span></button>
-                        </div>
-                    </div>
-                    <input name="locker" type="hidden" value="841543">
-                </form>
-            </div>
-        </div>
-        <!-- Column -->
-    </div>
+<div class="container">
+    <div class="card">
+        <table class="table table-hover shopping-cart-wrap">
+            <thead class="text-muted">
+                <tr>
+                    <th scope="col" class="text-dark">Company Info</th>
+                    <th scope="col" class="text-dark">Company Shipping Info</th>
+                    <th scope="col" class="text-dark">Company Billing Info</th>
+                    <th scope="col" class="text-dark">Company Banking Info</th>
+                    <th scope="col" width="200" class="text-dark text-center">Action</th>
+
+                </tr>
+            </thead>
+            <tbody *ngFor="let data of status">
+                <tr>
+                    <td>
+                        <figure class="media">
+                            <figcaption class="media-body">
+                                <dl class="param param-inline small">
+                                    <dt>Company Name: </dt>
+                                    <dd>{{data.companyinfo.company_name}}</dd>
+                                    <dt>Company Address: </dt>
+                                    <dd>{{data.companyinfo.company_address}}</dd>
+                                    <dt>Company Phone#: </dt>
+                                    <dd>{{data.companyinfo.company_phone}}</dd>
+                                    <dt>Company City#: </dt>
+                                    <dd>{{data.companyinfo.company_city}}</dd>
+                                    <dt>Nature Of Account</dt>
+                                    <dd>{{data.companyinfo.nature_of_account}}</dd>
+                                    <dt>Sale Of Person</dt>
+                                    <dd>{{data.companyinfo.sale_person}}</dd>
+                                    <dt>Product Types</dt>
+                                    <dd>{{data.companyinfo.products_type}}</dd>
+                                </dl>
+                                
+                            </figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="media">
+                            <figcaption class="media-body">
+                                <dl class="param param-inline small">
+                                    <dt>Contact Person Name </dt>
+                                    <dd>{{data.companyshippinginfo.contact_person_name}}</dd>
+                                    <dt>Contact Person Phone: </dt>
+                                    <dd>{{data.companyshippinginfo.contact_person_phone}}</dd>
+                                    <dt>Comapny Email Address: </dt>
+                                    <dd>{{data.companyshippinginfo.comapny_email_address}}</dd>
+                                    <dt>Pickup Address: </dt>
+                                    <dd>{{data.companyshippinginfo.pickup_address}}</dd>
+                                    <dt>Shipper Sity</dt>
+                                    <dd>{{data.companyshippinginfo.shipper_city}}</dd>
+                                </dl>
+                                
+                            </figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="media">
+                            <figcaption class="media-body">
+                                <dl class="param param-inline small">
+                                    <dt>Billing Person Name </dt>
+                                    <dd>{{data.companybillinginfo.billing_person_name}}</dd>
+                                    <dt>Billing Person Phone </dt>
+                                    <dd>{{data.companybillinginfo.billing_person_phone}}</dd>
+                                    <dt>Billing Address </dt>
+                                    <dd>{{data.companybillinginfo.billing_address}}</dd>
+                                    <dt>Billing Person Email </dt>
+                                    <dd>{{data.companybillinginfo.billing_person_email}}</dd>
+                                </dl>
+                                
+                            </figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        <figure class="media">
+                            <figcaption class="media-body">
+                                <dl class="param param-inline small">
+                                    <dt>Bank Name</dt>
+                                    <dd>{{data.comapnybankinfo.bank_name}}</dd>
+                                    <dt>Branch Name </dt>
+                                    <dd>{{data.comapnybankinfo.branch_name}}</dd>
+                                    <dt>Bank City </dt>
+                                    <dd>{{data.comapnybankinfo.bank_city}}</dd>
+                                    <dt>Account Title</dt>
+                                    <dd>{{data.comapnybankinfo.account_title}}</dd>
+                                    <dt>Account Number</dt>
+                                    <dd>{{data.comapnybankinfo.account_number}}</dd>
+                                    <dt>IBAN</dt>
+                                    <dd>{{data.comapnybankinfo.IBAN_number}}</dd>
+                                </dl>
+                                
+                            </figcaption>
+                        </figure>
+                    </td>
+                    <td class="text-right d-flex">
+                        <button title="" href="" class="btn btn-outline-success" data-toggle="tooltip"
+                            data-original-title="Save to Wishlist" (click)="approve(data.id, 'A')">Approved</button>
+                        <button href="" class="btn btn-outline-danger" (click)="disapproved(data.id,'D')">DisApproved</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> <!-- card.// -->
+
+  <div class="row" *ngIf="status?.length === 0">
+   <div class="col-lg-6 offset-lg-4">
+     <h4 class="text-danger"> Record Not Found</h4>
+   </div>
+  </div>
 </div>

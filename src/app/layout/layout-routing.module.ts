@@ -12,7 +12,7 @@ const routes: Routes = [
                 path: 'manager',
                 loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule)
             },
-            { path: 'seller', loadChildren: () => import('./grid/grid.module').then((m) => m.GridModule) },
+            { path: 'seller', loadChildren: () => import('./seller/seller.module').then((m) => m.SellerModule) },
         ]
     }
 ];

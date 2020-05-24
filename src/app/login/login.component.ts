@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['/employee']);
             }
             if (response.role === 'S'){
-                this.router.navigate(['/employee']);
+                this.router.navigate(['/seller']);
             }
         });
     }
